@@ -27,7 +27,7 @@
 		}
 		#logo_img{
 			position:fixed;
-			margin:5% 30%;
+			margin:0;
 			width:40%;
 			height:auto;
 			background-color:transparent;
@@ -37,7 +37,7 @@
 		}
 		#tab{
 			width:90%;
-			margin:43% 5%;
+			margin:0;
 			position:fixed;
 			z-index:1000;
 			transform-origin:0px 0px;
@@ -49,252 +49,175 @@
 			position:absolute;
 			margin-top:40%;
 		}
-		.bg-1{
-			display:block;
-			position:absolute;
-			top:500px;
-			left:-532px;
-			width:100%;
-			height:500%;
-			background-color:rgba(163,190,255,0.3);
+		.z-depth-5{
+			box-shadow:5px 10px 3px rgba(0,0,0,0.14)
+		}
+		.z-depth-3{
+			box-shadow:5px 5px 3px rgba(0,0,0,0.14)
 		}
 		</style>
 	</head>
 	<body id="body">
 		<img id="logo_img" alt="logo" src="img/logo.png">
-		<div id="tab" class="row z-depth-5">
-			<div class="col s12">
-				<ul class="tabs grey darken-2">
-					<li class="tab col s3">
-						<a id="a" style="font-size:0.82em" href="#about" class="white-text waves-effect waves-yellow">
-						About</a>
-					</li>
-					<li class="tab col s3">
-						<a id="f" style="font-size:0.82em" href="#features" class="white-text waves-effect waves-yellow">
-						Gallley</a>
-					</li>
-					<li class="tab col s3">
-						<a id="c" style="font-size:0.82em" href="#commands" class="white-text waves-effect waves-yellow">
-						Products</a>
-					</li>
-					<li class="tab col s3">
-						<a id="d" style="font-size:0.82em" href="#developer" class="white-text waves-effect waves-yellow">
-						Members</a>
-					</li>
-				</ul>
-			</div>
+		<div id="tab" class="z-depth-5">
+			<ul class="tabs grey darken-2">
+				<li class="tab col s3">
+					<a id="a" style="font-size:0.85em" href="#about" class="white-text waves-effect waves-yellow">
+					About</a>
+				</li>
+				<li class="tab col s3">
+					<a id="f" style="font-size:0.85em" href="#features" class="white-text waves-effect waves-yellow">
+					Products</a>
+				</li>
+				<li class="tab col s3">
+					<a id="c" style="font-size:0.85em" href="#commands" class="white-text waves-effect waves-yellow">
+					Gallery</a>
+				</li>
+				<li class="tab col s3">
+					<a id="d" style="font-size:0.85em" href="#developer" class="white-text waves-effect waves-yellow">
+					Members</a>
+				</li>
+			</ul>
 		</div>
 		
 		<div id="main">
-			<div id="about" class="card-panel z-depth-4">
+			<div id="about" class="card-panel">
 				<h3 class="card-title">About</h3>
 			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col s12 m6 l6">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
 							<div class="card-content">
-								<span class="card-title">VAWNとは</span>
-								<p>VAWNは様々なSNSから利用できるバーチャルアシスタントです。その名は "a Virtual Assistant Works on Node.js" に由来します。VAWNは多くの開発者によって日々改善が施されています。</p>
+								<span class="card-title">ここはどこ？</span>
+								<p>ここは横浜市立戸塚高校コンピューター部のオフィシャルサイトです。部に関する様々なことを紹介します。</p>
 							</div>
 						</div>
 					</div>
 					<div class="col s12 m6 l6">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
 							<div class="card-content">
-								<span class="card-title">VAWNと話すには</span>
-								<p>現在VAWNは主にMastodonからご利用いただいています。お好みのインスタンスに登録・ログインし、@VAWN@mstdn.y-zu.orgにメンションしてご利用ください。</p>
+								<span class="card-title">活動について</span>
+								<p>2階の奥、第二情報室にて毎週の月・水・金に活動しています。活動内容はWindows用のアプリケーションの開発やこのようなWebサイトの制作、文化祭に向けたゲーム開発や映像制作を行っています。さらに、Excelなどの検定資格を受験・取得することも可能です。</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div id="features" class="card-panel z-depth-4">
-				<h3 class="card-title">Gallley</h3>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
-							<div class="card-content">
-								<span class="card-title">文字ベース対話型</span>
-								<p>VAWNは多くのバーチャルアシスタントと異なり文字ベースのアシスタントです。そのため声を出しづらい場面でも気にせず使うことができます。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
-							<div class="card-content">
-								<span class="card-title">高速な動作</span>
-								<p>VAWNは大手ホスティングサービスのHerokuが運営するサーバーで動作しています。そのため高速なレスポンスが可能です。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
-							<div class="card-content">
-								<span class="card-title">たくさんの機能</span>
-								<p>VAWNはSNS向けBotでありながら多くの機能を有しています。さらに、その機能は日々追加・改善されています。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
-							<div class="card-content">
-								<span class="card-title">独自の巻き込み機能</span>
-								<p>VAWNへのコマンドにほかの人のメンションを含めるとVAWNからのリプライにその人を巻き込むことができます。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
-							<div class="card-content">
-								<span class="card-title">溢れる遊び心</span>
-								<p>VAWNには開発者の遊び心ある機能が組み込まれています。使っているうちに見つかるかも知れません。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
-							<div class="card-content">
-								<span class="card-title">あなたと共に成長する</span>
-								<p>ユーザーの皆さんがVAWNに話しかけるほどにVAWNは成長していきます。今後にご期待ください。</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div id="commands" class="card-panel z-depth-4">
+			<div id="features" class="card-panel">
 				<h3 class="card-title">Products</h3>
 			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
 							<div class="card-content">
-								<span class="card-title">ニュース</span>
-								<p>Yahooニュースより、最新のニュースを10個お伝えします。キーワードを指定することも可能です。</p>
+								<span class="card-title">「ん」の下克上</span>
+								<p>卒業生が制作したWindowsで動作する2Dシューティングゲームです。毎年の文化祭でも好評を博しています。</p>
 							</div>
 						</div>
 					</div>
 					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
 							<div class="card-content">
-								<span class="card-title">じゃんけん</span>
-								<p>みなさんご存知のじゃんけんができます。「ジャンケンぐー」のように言ってください。</p>
+								<span class="card-title">Sky BooooooST‼︎！</span>
+								<p>HIBIKIがBlenderで開発したはじめての3Dゲームです。操作感が悪いなど満足の行く作品とはなりませんでしたが、後の開発への教訓となりました。</p>
 							</div>
 						</div>
 					</div>
 					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
 							<div class="card-content">
-								<span class="card-title">今日はなんの日</span>
-								<p>「今日はなんの日？」と聞くと今日がなんの日かお教えします。リンクからはその他のものも確認できます。</p>
+								<span class="card-title">スロットゲーム</span>
+								<p>以前1年生が入部時に作成していたゲームです。現在ではプログラミングへの慣れなどを考慮し、代わりにJavaScritを使用しています。</p>
 							</div>
 						</div>
 					</div>
 					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
 							<div class="card-content">
-								<span class="card-title">価格サーチ</span>
-								<p>「〇〇 の値段」と言うことで<a href="http://kakaku.com"> kakaku.com</a>を利用して様々な商品の値段を調べます。</p>
+								<span class="card-title">北斗の連打</span>
+								<p>あの有名な「北斗の拳」を題材としたいわゆる連打ゲーです。小さな子供たちに人気があります。</p>
 							</div>
 						</div>
 					</div>
 					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
 							<div class="card-content">
-								<span class="card-title">クイック検索</span>
-								<p>「〇〇 を検索」と言うだけで簡単に検索ができます。</p>
+								<span class="card-title">タワーディフェンス</span>
+								<p>陣地内に防衛設備を配置し、敵の侵入を防ぐゲームです。部員もコツがよくわかっていません。</p>
 							</div>
 						</div>
 					</div>
 					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
 							<div class="card-content">
-								<span class="card-title">サイコロ</span>
-								<p>「サイコロ振って」と言うと1〜6のうちひとつ数字が返信されます。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
-							<div class="card-content">
-								<span class="card-title"> Web開発サーチ</span>
-								<p>「〇〇 の対応状況」と言うことで<a href="http://caniuse.com">caniuse.com</a>を利用してWeb関連の技術の対応状況を調べます。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
-							<div class="card-content">
-								<span class="card-title">計算</span>
-								<p>数字と日本語で数式を書き、「〇〇 の答えは」と言うと計算結果が返信されます。一般的な演算子にも対応予定です。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
-							<div class="card-content">
-								<span class="card-title">スーモジェネレーター</span>
-								<p>お馴染みのスーモのCMに合わせて「あ、〇〇！」と言うとあのフレーズを生成します。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
-							<div class="card-content">
-								<span class="card-title">TPDランキング</span>
-								<p> Mastodon版のVAWNでは1日あたりのトゥート数を基にした自分のランキングを調べられます。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
-							<div class="card-content">
-								<span class="card-title">おしゃべり</span>
-								<p>挨拶など、簡単な会話ができます。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m6 l4">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
-							<div class="card-content">
-								<span class="card-title">コイントス</span>
-								<p>簡単にコイントスができます。</p>
+								<span class="card-title">このサイト！！</span>
+								<p>サーバやドメインの用意、ページのデザイン、コーディングまで全てコン部がやりました！！しかも完全無料です✌️</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			
-			<div id="developer" class="card-panel z-depth-4">
+			<div id="commands" class="card-panel">
+				<h3 class="card-title">Gallery</h3>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m6 l4">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
+							<div class="card-content">
+								<span class="card-title">準備中</span>
+								<p>スクリーンショットなどを並べて紹介する予定です。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="developer" class="card-panel">
 				<h3 class="card-title">Members</h3>
 			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col s12 m6 l6">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
 							<div class="card-content">
-								<span class="card-title">VAWNのはオープンソースです</span>
-								<p>VAWNは<a href="https://github.com/HIBIKI-CUBE/VAWN">GitHub</a>にてMITライセンスで公開しています。ライセンスの範囲内で自由にご活用いただけます。</p>
+								<span class="card-title">HIBIKI</span>
+								<p>コンピューター部の部長です。Web関連が得意で、最近はBlenderをずっとやっています。</p>
 							</div>
 						</div>
 					</div>
 					<div class="col s12 m6 l6">
-						<div class="card z-depth-3 blue lighten-5 black-text waves-effect">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
 							<div class="card-content">
-								<span class="card-title">クレジット</span>
-								<p>VAWN Project</p>
-								<p><a href="https://mstdn.y-zu.org/@hibiki_cube">HIBIKI CUBE</a>：</p><p>コーディング サイト制作 他</p>
-								<p><a href="https://mstdn.y-zu.org/@ProgrammerGenboo">🎶どっかの玄ちゃん。🎶</a>：</p><p>コーディング デバッグ 他</p>
-								<p><a href="https://mstdn.y-zu.org/@BeWing">森林🌳エミールっぽい人</a>：</p><p>コーディング サーバー保守 他</p>
-								<br>
-								<p>Supported by <a href="https://mstdn.y-zu.org">Yづドン</a></p>
-								<br>
-								<p>&copy;2018 VAWN Project</p>
+								<span class="card-title">たいくう</span>
+								<p>準備中</p>
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m6 l6">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
+							<div class="card-content">
+								<span class="card-title">瑛介</span>
+								<p>準備中</p>
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m6 l6">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
+							<div class="card-content">
+								<span class="card-title"></span>
+								<p>準備中</p>
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m6 l6">
+						<div class="card z-depth-3 grey darken-3 white-text waves-effect waves-yellow">
+							<div class="card-content">
+								<p>&copy;横浜市立戸塚高校コンピューター部</p>
 							</div>
 						</div>
 					</div>
@@ -307,52 +230,72 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.0.0/rellax.min.js"></script>
 		<script>
+		
 		document.addEventListener('DOMContentLoaded', function() {
 			let rellax = new Rellax('.rellax');
 			let logo = document.getElementById("logo_img");
 			let tab = document.getElementById("tab");
 			let body = document.getElementById("body");
 			let tab_a = document.querySelectorAll(".tab>a");
-			let body_w , logo_h , logo_w , logo_mt , logo_mb , logo_mr , logo_ml , tab_h , tab_w , tab_mt , tab_mb , tab_mr , tab_ml , main_t ,sc;
+			let body_w , logo_h , logo_w , logo_mt , logo_mb , logo_mr , logo_ml , tab_h , tab_h2 , tab_w , tab_mt , tab_mb , tab_mr , tab_ml , main_t ,sc;
 			sc = pageYOffset;
+			let init = function(){
+				body_w = parseInt(getComputedStyle(body , "").width);
+				logo_h = parseInt(getComputedStyle(logo , "").height);
+				tab_h = parseInt(getComputedStyle(tab , "").height);
+				logo.style.marginTop = `${(tab_h+body_w * 0.02-logo_h/4)/2}px`;
+				logo.style.transform = `translateX(${body_w *(30 - 0.275 * sc)/100}px)`
+				tab.style.transform = `translate(${body_w *(5 + 0.225 * sc)/100}px,${body_w * 0.06 + logo_h + (tab_h+body_w * 0.02-logo_h/3)*1.5}px)`;
+				if(window.innerHeight < window.innerWidthtab_h){
+					tab_h2 = tab_h;
+				}else{
+					tab_h2 = tab_h;
+				}
+				document.getElementById("main").style.top = `${tab_h2 + logo_h + body_w*0.06}px`;
+				console.log("init");
+			}
 			let position = function(){
 				body_w = parseInt(getComputedStyle(body , "").width);
 				logo_h = parseInt(getComputedStyle(logo , "").height);
 				logo_w = parseInt(getComputedStyle(logo , "").width);
+				logo_mt = parseInt(getComputedStyle(logo , "").marginTop);
 				logo_ml = parseInt(getComputedStyle(logo , "").marginLeft);
 				tab_h = parseInt(getComputedStyle(tab , "").height);
 				tab_w = parseInt(getComputedStyle(tab , "").width);
 				tab_mt = parseInt(getComputedStyle(tab , "").marginTop);
 				tab_ml = parseInt(getComputedStyle(tab , "").marginLeft);
+				if(window.innerHeight < window.innerWidthtab_h){
+					tab_h2 = tab_h*4;
+				}else{
+					tab_h2 = tab_h
+				}
+				document.getElementById("main").style.top = `${tab_h2 + logo_h + body_w*0.06}px`;
 				main_t = parseInt(getComputedStyle(document.getElementById("main") , "").top);
-				logo_mt = parseInt(getComputedStyle(logo , "").marginTop);
-				logo.style.marginTop = `${(tab_h+body_w * 0.02-logo_h/4)/2}px`
-				document.getElementById("main").style.marginTop = `${tab_h + logo_mt + logo_h}px`;
-				console.log("サイズ取得完了");
+				console.log("position");
 			}
 			let anim = function(){
 				sc = pageYOffset;
 				if(sc <= 100){
 					logo.style.width = `${body_w *(40 - 0.3 * sc)/100}px`;
-					logo.style.marginLeft = `${body_w *(30 - 0.25 * sc)/100}px`;
+					logo.style.transform = `translateX(${body_w *(30 - 0.275 * sc)/100}px)`;
 					tab.style.width = `${body_w *(90 - 0.1 * sc)/100}px`;
-					tab.style.marginLeft = `${body_w *(5 + 0.125 * sc)/100}px`;
-					tab.style.marginTop = `${body_w * (43 - 0.38 * sc)/100}px`;
+					tab.style.transform = `translate(${body_w *(0.175 * sc)/100}px,${body_w * 0.02 + (body_w * 0.04 + parseInt(getComputedStyle(logo , "").height))*(100-sc)/100}px)`;
 					for(let i=0; i<tab_a.length; i++){
-						tab_a[i].style.fontSize = `${0.82 - 0.0018 * sc}em`;
+						tab_a[i].style.fontSize = `${1.2 - 0.0025 * sc}em`;
 					}
+					console.log("anim");
 				}else{
 					logo.style.width = `${body_w * 0.1}px`;
-					logo.style.marginLeft = `${body_w * 0.05}px`;
+					logo.style.transform = `translateX(${body_w * 0.025}px)`;
 					tab.style.width = `${body_w * 0.8}px`;
-					tab.style.marginLeft = `${body_w * 0.175}px`;
-					tab.style.marginTop = `${body_w * 0.02}px`;
+					tab.style.transform = `translate(${body_w * 0.175}px,${body_w * 0.02}px)`;
 					for(let i=0; i<tab_a.length; i++){
-						tab_a[i].style.fontSize = '0.67em';
+						tab_a[i].style.fontSize = '0.95em';
 					}
+					console.log("else");
 				}
 			}
-			position();
+			init();
 			addEventListener('resize' , position);
 			addEventListener('resize' , anim);
 			addEventListener('resize' , M.Tabs.init(document.getElementsByClassName("tabs")));
@@ -374,7 +317,7 @@
 					const start = pageYOffset; // 初期スクロール位置
 					const offsetTop = (function(e){ return e.getBoundingClientRect().top + pageYOffset })(dest); // 移動先の、最上位要素からのY座標
 					let t = 0; // 現在時刻
-					const c = offsetTop - start - logo_h*0.25 - 20; // 終了値
+					const c = offsetTop - start - tab_h; // 終了値
 					const startTime = new Date().getTime();
 					const id = setInterval(function(){
 						t = new Date().getTime() - startTime;
@@ -386,6 +329,86 @@
 				});
 			})();
 		});
+		
+// 		document.addEventListener('DOMContentLoaded', function() {
+// 			let rellax = new Rellax('.rellax');
+// 			let logo = document.getElementById("logo_img");
+// 			let tab = document.getElementById("tab");
+// 			let body = document.getElementById("body");
+// 			let tab_a = document.querySelectorAll(".tab>a");
+// 			let body_w , logo_h , logo_w , logo_mt , logo_mb , logo_mr , logo_ml , tab_h , tab_w , tab_mt , tab_mb , tab_mr , tab_ml , main_t ,sc;
+// 			sc = pageYOffset;
+// 			let position = function(){
+// 				body_w = parseInt(getComputedStyle(body , "").width);
+// 				logo_h = parseInt(getComputedStyle(logo , "").height);
+// 				logo_w = parseInt(getComputedStyle(logo , "").width);
+// 				logo_mt = parseInt(getComputedStyle(logo , "").marginTop);
+// 				logo_ml = parseInt(getComputedStyle(logo , "").marginLeft);
+// 				tab_h = parseInt(getComputedStyle(tab , "").height);
+// 				tab_w = parseInt(getComputedStyle(tab , "").width);
+// 				tab_mt = parseInt(getComputedStyle(tab , "").marginTop);
+// 				tab_ml = parseInt(getComputedStyle(tab , "").marginLeft);
+// 				main_t = parseInt(getComputedStyle(document.getElementById("main") , "").top);
+// 				logo.style.marginTop = `${(tab_h+body_w * 0.02-logo_h/3)/2}px`
+// 				console.log("サイズ取得完了");
+// 			}
+// 			let anim = function(){
+// 				sc = pageYOffset;
+// 				if(sc <= 100){
+// 					logo.style.width = `${body_w *(60 - 0.4 * sc)/100}px`;
+// 					logo.style.marginLeft = `${body_w *(20 - 0.15 * sc)/100}px`;
+// 					//logo.style.marginTop = `${body_w * (5 - 0.02 * sc)/100}px`;
+// 					tab.style.width = `${body_w *(90 - 0.2 * sc)/100}px`;
+// 					tab.style.marginLeft = `${body_w *(5 + 0.225 * sc)/100}px`;
+// 					tab.style.marginTop = `${body_w * (24 - 0.22 * sc)/100}px`;
+// 					for(let i=0; i<tab_a.length; i++){
+// 						tab_a[i].style.fontSize = `${0.85 - 0.0018 * sc}em`;
+// 					}
+// 				}else{
+// 					logo.style.width = `${body_w * 0.2}px`;
+// 					logo.style.marginLeft = `${body_w * 0.05}px`;
+// 					tab.style.width = `${body_w * 0.7}px`;
+// 					tab.style.marginLeft = `${body_w * 0.275}px`;
+// 					tab.style.marginTop = `${body_w * 0.02}px`;
+// 					for(let i=0; i<tab_a.length; i++){
+// 						tab_a[i].style.fontSize = '0.67em';
+// 					}
+// 				}
+// 			}
+// 			position();
+// 			addEventListener('resize' , position);
+// 			addEventListener('resize' , anim);
+// 			addEventListener('resize' , M.Tabs.init(document.getElementsByClassName("tabs")));
+// 			document.onscroll = anim;
+// 			M.Tabs.init(document.getElementsByClassName("tabs"));
+		
+// 			(function(){
+// 				const top = "#top"; // ページトップ用のリンク
+// 				const speed = 500; // スムーススクロールが完了するまでの時間 [ms]
+// 				const easing = function (t, b, c, d) { // 移動量の計算関数
+// 					return -c *(t/=d)*(t-2) + b;
+// 				};
+// 				document.addEventListener("click", function(e){
+// 					const href = e.target.getAttribute("href");
+// 					const targetIsInternalLink = (e.target.nodeName.toLowerCase() == "a") && /^#.+/.test(href);
+// 					if (!targetIsInternalLink) return; // 内部リンク以外は何もしない
+// 					const dest = href == top ? document.body : document.getElementById(href.slice(1)); // 移動先
+// 					if (!dest) return;
+// 					const start = pageYOffset; // 初期スクロール位置
+// 					const offsetTop = (function(e){ return e.getBoundingClientRect().top + pageYOffset })(dest); // 移動先の、最上位要素からのY座標
+// 					let t = 0; // 現在時刻
+// 					const c = offsetTop - start - parseInt(getComputedStyle(logo , "").height) - 20; // 終了値
+// 					const startTime = new Date().getTime();
+// 					const id = setInterval(function(){
+// 						t = new Date().getTime() - startTime;
+// 						const v = easing(t, 0, c, speed);
+// 						scrollTo(0, v + start);
+// 						if (c-1 <= v && v <= c+1) clearInterval(id);
+// 					}, 10);
+// 					e.preventDefault();
+// 				});
+// 			})();
+// 		});
 
 		</script>
 	</body>

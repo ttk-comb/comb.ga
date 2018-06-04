@@ -75,25 +75,27 @@
 	</head>
 	<body id="body">
 		<img id="logo_img" width="614" height="614" alt="logo" src="img/logo.png">
-		<div id="tab" class="z-depth-5 col s12">
+		<div id="tab" class="row">
+		<div class="z-depth-5 col s12">
 			<ul class="tabs grey darken-2">
 				<li class="tab col s3">
-					<a id="a" style="font-size:1em" href="#about" class="white-text waves-effect waves-yellow">
+					<a id="a" style="font-size:0.9em" href="#about" class="white-text waves-effect waves-yellow">
 					About</a>
 				</li>
 				<li class="tab col s3">
-					<a id="f" style="font-size:1em" href="#features" class="white-text waves-effect waves-yellow">
+					<a id="f" style="font-size:0.9em" href="#features" class="white-text waves-effect waves-yellow">
 					Products</a>
 				</li>
 				<li class="tab col s3">
-					<a id="c" style="font-size:1em" href="#commands" class="white-text waves-effect waves-yellow">
+					<a id="c" style="font-size:0.9em" href="#commands" class="white-text waves-effect waves-yellow">
 					Gallery</a>
 				</li>
 				<li class="tab col s3">
-					<a id="d" style="font-size:1em" href="#developer" class="white-text waves-effect waves-yellow">
+					<a id="d" style="font-size:0.9em" href="#developer" class="white-text waves-effect waves-yellow">
 					Members</a>
 				</li>
 			</ul>
+		</div>
 		</div>
 		
 		<div id="main">
@@ -296,15 +298,15 @@
 				body_w = parseInt(getComputedStyle(body , "").width);
 				logo_h = parseInt(getComputedStyle(logo , "").height);
 				tab_h = parseInt(getComputedStyle(tab , "").height);
-				logo.style.transform = `translate(${body_w *(30 - 0.275 * sc)/100}px,${(tab_h+body_w * 0.02-logo_h/4)/2}px)`
-				tab.style.transform = `translate(${body_w *(5 + 0.225 * sc)/100}px,${body_w * 0.02 + (body_w * 0.04 + parseInt(getComputedStyle(logo , "").height))*(100-sc)/100}px)`;
+				logo.style.transform = `translate3d(${body_w *(30 - 0.275 * sc)/100}px,${(tab_h+body_w * 0.02-logo_h/4)/2}px,0px)`
+				tab.style.transform = `translate3d(${body_w *(5 + 0.225 * sc)/100}px,${body_w * 0.02 + (body_w * 0.04 + parseInt(getComputedStyle(logo , "").height))*(100-sc)/100}px,0px)`;
 				if(window.innerHeight < window.innerWidthtab_h){
 					tab_h2 = tab_h*4;
 				}else{
 					tab_h2 = tab_h;
 				}
 				document.getElementById("main").style.top = `${tab_h2 + logo_h + body_w*0.06}px`;
-				console.log("init");
+				//console.log("init");
 			}
 			let position = function(){
 				body_w = parseInt(getComputedStyle(body , "").width);
@@ -317,28 +319,28 @@
 				tab_mt = parseInt(getComputedStyle(tab , "").marginTop);
 				tab_ml = parseInt(getComputedStyle(tab , "").marginLeft);
 				main_t = parseInt(getComputedStyle(document.getElementById("main") , "").top);
-				console.log("position");
+				//console.log("position");
 			}
 			let anim = function(){
 				sc = pageYOffset;
 				if(sc <= 100){
 					logo.style.width = `${body_w *(40 - 0.3 * sc)/100}px`;
-					logo.style.transform = `translate(${body_w *(30 - 0.275 * sc)/100}px,${(tab_h+body_w * 0.02-logo_h/4)/2}px)`;
+					logo.style.transform = `translate3d(${body_w *(30 - 0.275 * sc)/100}px,${(tab_h+body_w * 0.02-logo_h/4)/2}px,0px)`;
 					tab.style.width = `${body_w *(90 - 0.1 * sc)/100}px`;
-					tab.style.transform = `translate(${body_w *(5 + 0.125 * sc)/100}px,${body_w * 0.02 + (body_w * 0.04 + parseInt(getComputedStyle(logo , "").height))*(100-sc)/100}px)`;
+					tab.style.transform = `translate3d(${body_w *(5 + 0.125 * sc)/100}px,${body_w * 0.02 + (body_w * 0.04 + parseInt(getComputedStyle(logo , "").height))*(100-sc)/100}px,0px)`;
 					for(let i=0; i<tab_a.length; i++){
-						tab_a[i].style.fontSize = `${1 - 0.0015 * sc}em`;
+						tab_a[i].style.fontSize = `${0.9 - 0.0016 * sc}em`;
 					}
-					console.log("anim");
+					//console.log("anim");
 				}else{
 					logo.style.width = `${body_w * 0.1}px`;
-					logo.style.transform = `translate(${body_w * 0.025}px,${body_w * 0.02}px)`;
+					logo.style.transform = `translate3d(${body_w * 0.025}px,${body_w * 0.02}px,0px)`;
 					tab.style.width = `${body_w * 0.8}px`;
-					tab.style.transform = `translate(${body_w * 0.175}px,${body_w * 0.02}px)`;
+					tab.style.transform = `translate3d(${body_w * 0.175}px,${body_w * 0.02}px,0px)`;
 					for(let i=0; i<tab_a.length; i++){
-						tab_a[i].style.fontSize = '0.85em';
+						tab_a[i].style.fontSize = '0.74em';
 					}
-					console.log("else");
+					//console.log("else");
 				}
 			}
 			init();

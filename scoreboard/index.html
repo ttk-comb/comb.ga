@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117864418-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-117864418-1');
+		</script>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="description" content="戸塚高校コンピューター部の公式サイトです！">
+		<meta name="author" content="横浜市立戸塚高等学校コンピューター部">
+		<link rel="canonical" href="https://comb.ga">
+		<meta property="og:site_name" content="戸塚高校コンピューター部">
+		<meta property="og:title" content="戸塚高校コンピューター部 -コン部が！！-">
+		<meta property="og:description" content="戸塚高校コンピューター部の公式サイトです！">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://comb.ga">
+		<meta property="og:image" content="https://comb.ga/img/logo.png">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="https://comb.ga">
+		<meta name="twitter:image" content="https://comb.ga/img/logo.png">
+		<title>戸塚高校コンピューター部 -コン部が！！-</title>
+		<meta charset="utf-8">
+		<style>
+		*{
+			margin:0;
+			padding:0;
+			width:100%;
+		}
+		html,body{
+			background-color:white;
+			width:100%;
+			height:100%;
+			perspective: 500px;
+		}
+		.card{
+			color:white;
+			background-color:blue;
+		}
+		.card-panel, .page-footer{
+			padding:0 5%;
+			background-color:#09F;
+			color:white;
+		}
+		.card-title{
+			font-weight:600 !important;
+		}
+		.page-footer li>a{
+			box-shadow: 5px 5px 5px rgba(0,0,0,0.4) inset;
+		}
+		.page-footer li{
+			margin:5px auto;
+		}
+		#logo_img{
+			position:fixed;
+			margin:0;
+			width:40%;
+			height:auto;
+			background-color:transparent;
+			z-index:1000;
+			filter:drop-shadow(10px 15px 3px rgba(0,0,0,0.14));
+			transform-origin:0px 0px;
+		}
+		#tab{
+			width:90%;
+			margin:0;
+			position:fixed;
+			z-index:1000;
+			transform-origin:0px 0px;
+		}
+		#tab .col{
+			padding:0;
+		}
+		#main{
+			position:absolute;
+			top:40%;
+		}
+		.z-depth-5{
+			box-shadow:5px 10px 3px rgba(0,0,0,0.14)
+		}
+		.z-depth-3{
+			box-shadow:5px 5px 3px rgba(0,0,0,0.14)
+		}
+		</style>
+	</head>
+	<body id="body">
+		<h1 style="color:rgba(255,255,255,0.2);font-size:1px;position:absolute;">戸塚高校 コンピューター部 体育祭 リアルタイムスコアボード</h1>
+		
+		<div id="main">
+			
+			<footer class="page-footer z-depth-1 white-text waves-effect">
+				<div class="container">
+					<div class="row">
+						<div class="col l6 s12">
+							<h5>コン部が！！</h5>
+							<p>戸塚高校コンピューター部のオフィシャルウェブサイト。</p>
+						</div>
+						<div class="col l4 offset-l2 s12">
+							<h5>リンク</h5>
+							<ul>
+								<li><a class="btn-flat blue lighten-4 waves-effect" href="http://www.edu.city.yokohama.lg.jp/sch/hs/totsuka/">戸塚高校</a></li>
+								<li><a class="btn-flat blue lighten-4 waves-effect" href="https://mobile.twitter.com/comb_ttk">Twitter</a></li>
+								<li><a class="btn-flat blue lighten-4 waves-effect" href="https://github.com/ttk-comb/">Github</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+						&copy;横浜市立戸塚高校コンピューター部
+					</div>
+				</div>
+			</footer>
+
+			
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
+		<script>
+		document.addEventListener('DOMContentLoaded', 
+
+					for(let i=0; i<tab_a.length; i++){
+						tab_a[i].style.fontSize = `${0.9 - 0.0016 * sc}em`;
+					}
+
+			(function(){
+				const top = "#top"; // ページトップ用のリンク
+				const speed = 500; // スムーススクロールが完了するまでの時間 [ms]
+				const easing = function (t, b, c, d) { // 移動量の計算関数
+					return -c *(t/=d)*(t-2) + b;
+				};
+				document.addEventListener("click", function(e){
+					const href = e.target.getAttribute("href");
+					const targetIsInternalLink = (e.target.nodeName.toLowerCase() == "a") && /^#.+/.test(href);
+					if (!targetIsInternalLink) return; // 内部リンク以外は何もしない
+					const dest = href == top ? document.body : document.getElementById(href.slice(1)); // 移動先
+					if (!dest) return;
+					const start = pageYOffset; // 初期スクロール位置
+					const offsetTop = (function(e){ return e.getBoundingClientRect().top + pageYOffset })(dest); // 移動先の、最上位要素からのY座標
+					let t = 0; // 現在時刻
+					const c = offsetTop - start - tab_h; // 終了値
+					const startTime = new Date().getTime();
+					const id = setInterval(function(){
+						t = new Date().getTime() - startTime;
+						const v = easing(t, 0, c, speed);
+						scrollTo(0, v + start);
+						if (c-1 <= v && v <= c+1) clearInterval(id);
+					}, 10);
+					e.preventDefault();
+				});
+			})();
+		},100);
+		});
+
+		</script>
+	</body>
+</html>

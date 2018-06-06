@@ -1,10 +1,10 @@
 {
-	"red":200,
-	"blue":200,
-	"yellow":200,
-	"white":200,
-	"close_h":1,
-	"close_m":58,
-	"stop":false,
+	"red":0,
+	"blue":0,
+	"yellow":0,
+	"white":0,
+	"close_h":15,
+	"close_m":30,
+	"stop":true,
 	"msg":"体育祭楽しんでますかー！"
 }

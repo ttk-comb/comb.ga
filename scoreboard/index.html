@@ -36,7 +36,7 @@
 			width:100%;
 		}
 		html,body{
-			background-color:background: linear-gradient(0deg, white, navy);;
+			background: linear-gradient(0deg, white, #00a5ff);
 			width:100%;
 			height:100%;
 			perspective: 500px;
@@ -54,10 +54,13 @@
 			font-weight:600 !important;
 		}
 		#top{
-			background-color:rgba(220,220,220,0.5);
+			background-color:rgba(255,255,255,0.8);
+			filter:drop-shadow(10px 15px 3px rgba(0,0,0,0.14));
 		}
 		#root{
 			background-color:black;
+			filter:drop-shadow(10px 15px 3px rgba(0,0,0,0.14));
+			margin-bottom:10%;
 		}
 		.team{
 			display: flex;
@@ -74,6 +77,7 @@
 			width:70%;
 			text-align:center;
 			border-radius:10px;
+			filter:drop-shadow(8px 12px 2.4px rgba(0,0,0,0.2));
 		}
 		#red{
 			background-color:red;
@@ -183,24 +187,38 @@
 			let white = document.getElementById("white");
 			let rr = document.getElementById("rr");
 			let body_w , root_h , root_w  , logo_mr , logo_ml , tab_h , tab_h2 , tab_w , tab_mt , tab_mb , tab_mr , tab_ml , main_t ,sc;
-			body_w = parseInt(getComputedStyle(body , "").width);
-			root.style.width = `${body_w*0.7}px`;
-			root.style.height = `${body_w*0.7}px`;
-			red.style.width = `${body_w*0.35}px`;
-			red.style.height = `${body_w*0.35}px`;
-			blue.style.width = `${body_w*0.35}px`;
-			blue.style.height = `${body_w*0.35}px`;
-			yellow.style.width = `${body_w*0.35}px`;
-			yellow.style.height = `${body_w*0.35}px`;
-			white.style.width = `${body_w*0.35}px`;
-			white.style.height = `${body_w*0.35}px`;
-			rr.style.height = `${body_w*0.7}px`;
-			blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0)`;
-			yellow.style.transform = `translate3d(0,${body_w*-0.35}px,0)`;
-			white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0)`;
-			
-			
-			
+			let init = function(){
+				//見た目の初期設定を行う関数です。読み込み時と、画面の回転の際に呼び出されます。
+				body_w = parseInt(getComputedStyle(body , "").width);
+				root.style.width = `${body_w*0.7}px`;
+				root.style.height = `${body_w*0.7}px`;
+				red.style.width = `${body_w*0.35}px`;
+				red.style.height = `${body_w*0.35}px`;
+				blue.style.width = `${body_w*0.35}px`;
+				blue.style.height = `${body_w*0.35}px`;
+				yellow.style.width = `${body_w*0.35}px`;
+				yellow.style.height = `${body_w*0.35}px`;
+				white.style.width = `${body_w*0.35}px`;
+				white.style.height = `${body_w*0.35}px`;
+				rr.style.height = `${body_w*0.7}px`;
+				blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0)`;
+				yellow.style.transform = `translate3d(0,${body_w*-0.35}px,0)`;
+				white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0)`;
+				console.log("init");
+			}
+			let scoreLoad = function(url){
+				//サーバーとFetch APIで通信してスコア情報を持つJSONを取得し、ページに反映する関数です。10秒おきに呼ばれます。
+				fetch(url).then(function(response) {
+					return response.json();
+				}).then(function(json) {
+					// jsonにJSONオブジェクトで結果が渡される
+					
+				});
+			}
+			init();
+			console.log(scoreLoad("https://comb.ga/scoreboard/data.json"));
+			window.addEventListener("orientationchange", init);
+			setInterval(scoreLoad , 10000);
 			
 			
 		

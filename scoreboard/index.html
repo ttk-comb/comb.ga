@@ -19,15 +19,15 @@
 		<meta name="author" content="横浜市立戸塚高等学校コンピューター部">
 		<link rel="canonical" href="https://comb.ga">
 		<meta property="og:site_name" content="戸塚高校コンピューター部">
-		<meta property="og:title" content="戸塚高校コンピューター部 -コン部が！！-">
+		<meta property="og:title" content="戸塚高校 2018体育祭 リアルタイムスコアボード 得点表">
 		<meta property="og:description" content="戸塚高校コンピューター部の公式サイトです！">
 		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://comb.ga">
+		<meta property="og:url" content="https://comb.ga/scoreboard/">
 		<meta property="og:image" content="https://comb.ga/img/logo.png">
 		<meta name="twitter:card" content="summary">
-		<meta name="twitter:site" content="https://comb.ga">
+		<meta name="twitter:site" content="https://comb.ga/scoreboard/">
 		<meta name="twitter:image" content="https://comb.ga/img/logo.png">
-		<title>戸塚高校コンピューター部 -コン部が！！-</title>
+		<title>戸塚高校 2018体育祭 リアルタイムスコアボード 得点表</title>
 		<meta charset="utf-8">
 		<style>
 		*{
@@ -36,7 +36,8 @@
 			width:100%;
 		}
 		html,body{
-			background: linear-gradient(0deg, white, #00a5ff);
+			background-image: linear-gradient(0deg, #c2e8fc, #00a5ff);
+			background-size: 800px 800px;
 			width:100%;
 			height:100%;
 			perspective: 500px;
@@ -58,7 +59,7 @@
 			filter:drop-shadow(10px 15px 3px rgba(0,0,0,0.14));
 		}
 		#root{
-			background-color:black;
+			background-color:rgba(255,255,255,0);
 			filter:drop-shadow(10px 15px 3px rgba(0,0,0,0.14));
 			margin-bottom:10%;
 		}
@@ -74,26 +75,31 @@
 		.team>div{
 			background-color:rgba(255,255,255,0.8);
 			vertical-align:middle;
-			width:70%;
+			width:90%;
 			text-align:center;
 			border-radius:10px;
 			filter:drop-shadow(8px 12px 2.4px rgba(0,0,0,0.2));
 		}
 		#red{
 			background-color:red;
-			transform-origin:100% 100%;
+			transform-origin:100% 100% 0;
 		}
 		#blue{
 			background-color:blue;
-			transform-origin:0% 100%;
+			transform-origin:0% 100% 0;
 		}
 		#yellow{
 			background-color:yellow;
-			transform-origin:0% 0%;
+			transform-origin:100% 0% 0;
 		}
 		#white{
 			background-color:white;
-			transform-origin:100% 0%;
+			transform-origin:0% 0% 0;
+		}
+		#cover{
+			display:none;
+			background-color:rgba(255,255,255,0.8);
+			transform-origin:0% 0%;
 		}
 		.title{
 			font-weight:600 !important;
@@ -145,6 +151,9 @@
 					<div id="white"class="team center-align">
 						<div class="center-align">0</div>
 					</div>
+					<div id="cover"class="team center-align">
+						<div class="center-align">停止中</div>
+					</div>
 				</div>
 			</div>
 			
@@ -185,7 +194,9 @@
 			let blue = document.getElementById("blue");
 			let yellow = document.getElementById("yellow");
 			let white = document.getElementById("white");
+			let cover = document.getElementById("cover");
 			let rr = document.getElementById("rr");
+			let time = new Date();
 			let body_w , root_h , root_w  , logo_mr , logo_ml , tab_h , tab_h2 , tab_w , tab_mt , tab_mb , tab_mr , tab_ml , main_t ,sc;
 			let init = function(){
 				//見た目の初期設定を行う関数です。読み込み時と、画面の回転の際に呼び出されます。
@@ -200,24 +211,75 @@
 				yellow.style.height = `${body_w*0.35}px`;
 				white.style.width = `${body_w*0.35}px`;
 				white.style.height = `${body_w*0.35}px`;
+				cover.style.width = `${body_w*0.7}px`;
+				cover.style.height = `${body_w*0.7}px`;
 				rr.style.height = `${body_w*0.7}px`;
 				blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0)`;
 				yellow.style.transform = `translate3d(0,${body_w*-0.35}px,0)`;
 				white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0)`;
+				cover.style.transform = `translate3d(0px,${body_w*-1.4}px,0)`;
 				console.log("init");
 			}
-			let scoreLoad = function(url){
+			let scoreLoad = function(){
 				//サーバーとFetch APIで通信してスコア情報を持つJSONを取得し、ページに反映する関数です。10秒おきに呼ばれます。
-				fetch(url).then(function(response) {
+				
+				fetch('./data.json').then(response => {
+					console.log(response.status); // 200
 					return response.json();
-				}).then(function(json) {
-					// jsonにJSONオブジェクトで結果が渡される
-					
+				}).then(json => {
+					if(json.stop||(time.getHours()>=json.close_h && time.getMinutes()>=json.close_m)){
+						cover.style.display = "flex";
+						red.innerHTML = `<div class="center-align">???</div>`;
+						blue.innerHTML = `<div class="center-align">???</div>`;
+						yellow.innerHTML = `<div class="center-align">???</div>`;
+						white.innerHTML = `<div class="center-align">???</div>`;
+					}else if(time.getHours()>=json.close_h && time.getMinutes()>=json.close_m){
+						cover.style.display = "flex";
+						red.innerHTML = `<div class="center-align">???</div>`;
+						blue.innerHTML = `<div class="center-align">???</div>`;
+						yellow.innerHTML = `<div class="center-align">???</div>`;
+						white.innerHTML = `<div class="center-align">???</div>`;
+					}else{
+						cover.style.display = "none";
+						red.innerHTML = `<div class="center-align">${json.red}</div>`;
+						blue.innerHTML = `<div class="center-align">${json.blue}</div>`;
+						yellow.innerHTML = `<div class="center-align">${json.yellow}</div>`;
+						white.innerHTML = `<div class="center-align">${json.white}</div>`;
+						
+						switch(Math.max(json.red,json.blue,json.yellow,json.white)){
+							default:
+								red.style.transform = `scale(1,1)`;
+								blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0) scale(1,1)`;
+								yellow.style.transform = `translate3d(0,${body_w*-0.35}px,0) scale(1,1)`;
+								white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0) scale(1,1)`;
+								break;
+							case json.red:
+								blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0) scale(${json.blue/json.red},${json.blue/json.red})`;
+								yellow.style.transform = `translate3d(0,${body_w*-0.35}px,0)scale(${json.yellow/json.red},${json.yellow/json.red})`;
+								white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0) scale(${json.white/json.red},${json.white/json.red})`;
+								break;
+							case json.blue:
+								red.style.transform = `scale(${json.red/json.blue},${json.red/json.blue})`;
+								yellow.style.transform = `translate3d(0,${body_w*-0.35}px,0) scale(${json.yellow/json.blue},${json.yellow/json.blue})`;
+								white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0) scale(${json.white/json.blue},${json.white/json.blue})`;
+								break;
+							case json.yellow:
+								red.style.transform = `scale(${json.red/json.yellow},${json.red/json.yellow})`;
+								blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0) scale(${json.yellow/json.yellow},${json.yellow/json.yellow})`;
+								white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0) scale(${json.white/json.yellow},${json.white/json.yellow})`;
+								break;
+							case json.white:
+								red.style.transform = `scale(${json.red/json.white},${json.red/json.white})`;
+								yellow.style.transform = `translate3d(0,${body_w*-0.35}px,0) scale(${json.yellow/json.white},${json.yellow/json.white})`;
+								blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0) scale(${json.white/json.white},${json.white/json.white})`;
+								break;
+						}
+					}
 				});
 			}
 			init();
-			console.log(scoreLoad("https://comb.ga/scoreboard/data.json"));
-			window.addEventListener("orientationchange", init);
+			scoreLoad();
+			window.addEventListener("orientationchange", init());
 			setInterval(scoreLoad , 10000);
 			
 			

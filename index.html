@@ -120,16 +120,16 @@
 		<div id="main">
 			<div class="container">
 				<div class="row">
-					<a href="./scoreboard/index.html" class="white-text waves-effect">
-					<div class="col s12 m6 l6">
+					<div class="col s12">
+						<a href="./scoreboard/index.html">
 						<div class="card z-depth-3 grey lighten-5 black-text waves-effect">
 							<div class="card-content">
 								<span class="card-title">体育祭スコアボード</span>
 								<p>平成30年度体育祭の特設リアルタイムスコアボードを見るには、ここをタップ！！</p>
 							</div>
 						</div>
+						</a>
 					</div>
-					</a>
 				</div>
 			</div>
 			<div id="about" class="card-panel">
@@ -377,6 +377,8 @@
 			position();
 			addEventListener('resize' , position);
 			addEventListener('resize' , anim);
+			addEventListener("orientationchange", position);
+			addEventListener("orientationchange", anim);
 			addEventListener('resize' , M.Tabs.init(document.getElementsByClassName("tabs")));
 			document.onscroll = anim;
 			M.Tabs.init(document.getElementsByClassName("tabs"));

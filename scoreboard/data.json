@@ -3,8 +3,8 @@
 	"blue":0,
 	"yellow":0,
 	"white":0,
-	"close_h":15,
-	"close_m":30,
-	"stop":false,
+	"close_h":23,
+	"close_m":59,
+	"stop":true,
 	"msg":"体育祭楽しんでますかー！"
 }

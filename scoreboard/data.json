@@ -5,6 +5,6 @@
 	"white":210,
 	"close_h":15,
 	"close_m":30,
-	"stop":false,
+	"stop":true,
 	"msg":"体育祭楽しんでますかー！"
 }

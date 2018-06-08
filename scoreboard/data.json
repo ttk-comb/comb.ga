@@ -1,8 +1,8 @@
 {
-	"red":1065,
-	"blue":1040,
-	"yellow":1140,
-	"white":1140,
+	"red":1130,
+	"blue":1105,
+	"yellow":1240,
+	"white":1200,
 	"close_h":14,
 	"close_m":20,
 	"stop":false

@@ -230,7 +230,7 @@
 					console.log(response.status); // 200
 					return response.json();
 				}).then(json => {
-					if(json.stop||(time.getHours()>=json.close_h && time.getMinutes()>=json.close_m)){
+					if(json.stop){
 						cover.style.display = "flex";
 						red.innerHTML = `<div class="center-align">???</div>`;
 						blue.innerHTML = `<div class="center-align">???</div>`;

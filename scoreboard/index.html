@@ -268,7 +268,7 @@
 								break;
 							case json.yellow:
 								red.style.transform = `scale(${json.red/json.yellow},${json.red/json.yellow})`;
-								blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0) scale(${json.yellow/json.yellow},${json.yellow/json.yellow})`;
+								blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0) scale(${json.blue/json.yellow},${json.blue/json.yellow})`;
 								white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0) scale(${json.white/json.yellow},${json.white/json.yellow})`;
 								break;
 							case json.white:
@@ -284,7 +284,7 @@
 			scoreLoad();
 			window.addEventListener("orientationchange", init);
 			window.addEventListener("resize", init);
-			setInterval(scoreLoad , 1000);
+			setInterval(scoreLoad , 10000);
 		});
 		</script>
 	</body>

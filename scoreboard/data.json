@@ -2,8 +2,8 @@
 	"red":1010,
 	"blue":985,
 	"yellow":1050,
-	"white":10500,
-	"close_h":12,
-	"close_m":00,
+	"white":1051,
+	"close_h":14,
+	"close_m":30,
 	"stop":true
 }

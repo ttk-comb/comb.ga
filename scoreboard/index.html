@@ -278,7 +278,8 @@
 			scoreLoad();
 			window.addEventListener("orientationchange", init);
 			window.addEventListener("resize", init);
-			setInterval(scoreLoad , 10000);
+			window.addEventListener("resize", scoreLoad);
+			//setInterval(scoreLoad , 10000);
 		});
 		</script>
 	</body>

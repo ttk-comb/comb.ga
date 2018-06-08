@@ -248,7 +248,7 @@
 						blue.innerHTML = `<div class="center-align">${json.blue}</div>`;
 						yellow.innerHTML = `<div class="center-align">${json.yellow}</div>`;
 						white.innerHTML = `<div class="center-align">${json.white}</div>`;
-						
+						console.log(Math.max(json.red,json.blue,json.yellow,json.white));
 						switch(Math.max(json.red,json.blue,json.yellow,json.white)){
 							default:
 								red.style.transform = `scale(1,1)`;
@@ -284,7 +284,7 @@
 			scoreLoad();
 			window.addEventListener("orientationchange", init);
 			window.addEventListener("resize", init);
-			setInterval(scoreLoad , 10000);
+			setInterval(scoreLoad , 1000);
 		});
 		</script>
 	</body>

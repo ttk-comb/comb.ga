@@ -1,9 +1,9 @@
 {
-	"red":0,
-	"blue":0,
-	"yellow":0,
-	"white":0,
-	"close_h":14,
+	"red":540,
+	"blue":550,
+	"yellow":540,
+	"white":585,
+	"close_h":12,
 	"close_m":30,
-	"stop":true
+	"stop":fasle
 }

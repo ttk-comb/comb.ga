@@ -3,7 +3,7 @@
 	"blue":650,
 	"yellow":720,
 	"white":680,
-	"close_h":12,
-	"close_m":30,
+	"close_h":11,
+	"close_m":50,
 	"stop":false
 }

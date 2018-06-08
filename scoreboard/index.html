@@ -236,12 +236,6 @@
 						blue.innerHTML = `<div class="center-align">???</div>`;
 						yellow.innerHTML = `<div class="center-align">???</div>`;
 						white.innerHTML = `<div class="center-align">???</div>`;
-					}else if(time.getHours()>=json.close_h && time.getMinutes()>=json.close_m){
-						cover.style.display = "flex";
-						red.innerHTML = `<div class="center-align">???</div>`;
-						blue.innerHTML = `<div class="center-align">???</div>`;
-						yellow.innerHTML = `<div class="center-align">???</div>`;
-						white.innerHTML = `<div class="center-align">???</div>`;
 					}else{
 						cover.style.display = "none";
 						red.innerHTML = `<div class="center-align">${json.red}</div>`;
@@ -284,7 +278,7 @@
 			scoreLoad();
 			window.addEventListener("orientationchange", init);
 			window.addEventListener("resize", init);
-			setInterval(scoreLoad , 10000);
+			//setInterval(scoreLoad , 10000);
 		});
 		</script>
 	</body>

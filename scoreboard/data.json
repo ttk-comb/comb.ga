@@ -5,5 +5,5 @@
 	"white":1050,
 	"close_h":12,
 	"close_m":00,
-	"stop":false
+	"stop":true
 }

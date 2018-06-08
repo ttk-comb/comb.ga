@@ -217,10 +217,10 @@
 				cover.style.width = `${body_w*0.7}px`;
 				cover.style.height = `${body_w*0.7}px`;
 				rr.style.height = `${body_w*0.7}px`;
-				blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0)`;
-				yellow.style.transform = `translate3d(0,${body_w*-0.35}px,0)`;
-				white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0)`;
-				cover.style.transform = `translate3d(0px,${body_w*-1.4}px,0)`;
+				blue.style.transform = `translate(${body_w*0.35}px,${body_w*-0.35}px,0)`;
+				yellow.style.transform = `translate(0,${body_w*-0.35}px,0)`;
+				white.style.transform = `translate(${body_w*0.35}px,${body_w*-0.7}px,0)`;
+				cover.style.transform = `translate(0px,${body_w*-1.4}px,0)`;
 				console.log("init");
 			}
 			let scoreLoad = function(){
@@ -246,29 +246,29 @@
 						switch(Math.max(json.red,json.blue,json.yellow,json.white)){
 							default:
 								red.style.transform = `scale(1,1)`;
-								blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0) scale(1,1)`;
-								yellow.style.transform = `translate3d(0,${body_w*-0.35}px,0) scale(1,1)`;
-								white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0) scale(1,1)`;
+								blue.style.transform = `translate(${body_w*0.35}px,${body_w*-0.35}px,0) scale(1,1)`;
+								yellow.style.transform = `translate(0,${body_w*-0.35}px,0) scale(1,1)`;
+								white.style.transform = `translate(${body_w*0.35}px,${body_w*-0.7}px,0) scale(1,1)`;
 								break;
 							case json.red:
-								blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0) scale(${json.blue/json.red},${json.blue/json.red})`;
-								yellow.style.transform = `translate3d(0,${body_w*-0.35}px,0)scale(${json.yellow/json.red},${json.yellow/json.red})`;
-								white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0) scale(${json.white/json.red},${json.white/json.red})`;
+								blue.style.transform = `translate(${body_w*0.35}px,${body_w*-0.35}px,0) scale(${json.blue/json.red},${json.blue/json.red})`;
+								yellow.style.transform = `translate(0,${body_w*-0.35}px,0)scale(${json.yellow/json.red},${json.yellow/json.red})`;
+								white.style.transform = `translate(${body_w*0.35}px,${body_w*-0.7}px,0) scale(${json.white/json.red},${json.white/json.red})`;
 								break;
 							case json.blue:
 								red.style.transform = `scale(${json.red/json.blue},${json.red/json.blue})`;
-								yellow.style.transform = `translate3d(0,${body_w*-0.35}px,0) scale(${json.yellow/json.blue},${json.yellow/json.blue})`;
-								white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0) scale(${json.white/json.blue},${json.white/json.blue})`;
+								yellow.style.transform = `translate(0,${body_w*-0.35}px,0) scale(${json.yellow/json.blue},${json.yellow/json.blue})`;
+								white.style.transform = `translate(${body_w*0.35}px,${body_w*-0.7}px,0) scale(${json.white/json.blue},${json.white/json.blue})`;
 								break;
 							case json.yellow:
 								red.style.transform = `scale(${json.red/json.yellow},${json.red/json.yellow})`;
-								blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0) scale(${json.blue/json.yellow},${json.blue/json.yellow})`;
-								white.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.7}px,0) scale(${json.white/json.yellow},${json.white/json.yellow})`;
+								blue.style.transform = `translate(${body_w*0.35}px,${body_w*-0.35}px,0) scale(${json.blue/json.yellow},${json.blue/json.yellow})`;
+								white.style.transform = `translate(${body_w*0.35}px,${body_w*-0.7}px,0) scale(${json.white/json.yellow},${json.white/json.yellow})`;
 								break;
 							case json.white:
 								red.style.transform = `scale(${json.red/json.white},${json.red/json.white})`;
-								yellow.style.transform = `translate3d(0,${body_w*-0.35}px,0) scale(${json.yellow/json.white},${json.yellow/json.white})`;
-								blue.style.transform = `translate3d(${body_w*0.35}px,${body_w*-0.35}px,0) scale(${json.blue/json.white},${json.blue/json.white})`;
+								yellow.style.transform = `translate(0,${body_w*-0.35}px,0) scale(${json.yellow/json.white},${json.yellow/json.white})`;
+								blue.style.transform = `translate(${body_w*0.35}px,${body_w*-0.35}px,0) scale(${json.blue/json.white},${json.blue/json.white})`;
 								break;
 						}
 					}
